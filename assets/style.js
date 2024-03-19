@@ -227,7 +227,6 @@ function loopClient() {
         </div>
             <div class="card-body text-center">
             <h5 class="card-title"> ${item.name}</h5>
-            <p class="card-text">Lorem Ipsum Dolor</p>
         </div>
        </div>`);
     });
