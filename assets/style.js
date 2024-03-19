@@ -221,7 +221,7 @@ function loopClient() {
     ];
     client.forEach((item, i ) => {
        parent.append(`
-       <div key=${i} class="card col-md-3 align-items-center py-4 mx-3 custom-shadow">
+       <div key=${i} class="card col-md-3 align-items-center py-4 mx-3 custom-shadow mt-2">
         <div class="box">
         <i class="${item.icon} dark-mode-text"></i>
         </div>
