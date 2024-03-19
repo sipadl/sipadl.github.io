@@ -321,7 +321,7 @@ $(document).ready(() => {
         $('.isi-porto').html("");
         dataDiri.porto.forEach((item) => {
             $('.isi-porto').append(`
-            <div class="card  border-0 col-sm-12 col-md-12 mt-2">
+            <div class="card col-sm-12 col-md-12 mt-2">
             <div class="p-2">
             <a class="text-body" href="#">
             <img class="fix-images" src="${item.gambar}" alt="">
