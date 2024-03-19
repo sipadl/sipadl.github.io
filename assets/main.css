@@ -1,0 +1,117 @@
+body {
+    transition: background-color 0.5s;
+}
+/* Custom styles for dark mode */
+.dark-mode {
+    background-color: #242424;
+    color: #fff;
+}
+
+.dark-mode-text {
+    color: #fff;
+}
+
+/* Style for the dark mode switch */
+.custom-switch .custom-control-input:checked~.custom-control-label::before {
+    background-color: #818181; /* Bootstrap primary color */
+}
+/* Adjust icon color based on dark mode state */
+.custom-control-label .fa-sun {
+    color: #f39c12; /* Font Awesome sun icon color */
+}
+
+.custom-control-label .fa-moon {
+    color: #f1c40f; /* Font Awesome moon icon color */
+}
+.img-a7x {
+    object-fit: cover;
+    object-position: center;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+}
+.box {
+    height: 60px;
+    width: 60px;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Style untuk ikon di dalam kotak */
+.box i {
+    font-size: 24px; /* Sesuaikan ukuran ikon */
+}
+.fix-images {
+    height: 30vh;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.custom-shadow:hover {
+    box-shadow: -1px 2px 70px 2px rgba(0,0,0,0.25);
+-webkit-box-shadow: -1px 2px 70px 2px rgba(0,0,0,0.25);
+-moz-box-shadow: -1px 2px 70px 2px rgba(0,0,0,0.25);
+}
+.custom-shadow{
+    box-shadow: 10px 13px 18px -3px rgba(0,0,0,0.23);
+-webkit-box-shadow: 10px 13px 18px -3px rgba(0,0,0,0.23);
+-moz-box-shadow: 10px 13px 18px -3px rgba(0,0,0,0.23);
+}
+.list-group-item.active {
+    background-color: #a5a5a577 !important;
+    width: inherit;
+}
+html, body {
+    scroll-behavior: smooth; /* Mengaktifkan perilaku gulir mulus */
+}
+
+/* Menambahkan efek transisi untuk perubahan properti top */
+html {
+    scroll-behavior: smooth;
+    transition: 0.5s ease-in-out;
+}
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-info li {
+    margin-bottom: 10px;
+}
+.contact-info i {
+    margin-right: 10px;
+}
+.skill-list {
+    list-style: none;
+    padding: 0;
+}
+.skill-list-item {
+    margin-bottom: 10px;
+}
+.skill-icon {
+    margin-right: 10px;
+}
+.img-skils-img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+}
+.red {
+    background: rgba(210, 0, 0, 0.977);
+    color: white;
+}
+.green {
+    background-color: green;
+    color: white;
+}
+.blue {
+    background-color: blue;
+    color: white;
+}
+.yellow {
+    background-color: orange;
+    color: white;
+}
