@@ -30,8 +30,8 @@ const dataDiri = {
           "perusahaan": "PT Mitra Transaksi Indonesia",
           "posisi": "Software Development",
           "waktu": {
-            "mulai": "Jan 2022",
-            "selesai": "Present"
+            "mulai": "01/2022",
+            "selesai": "now"
           },
           "tags":[
             {
@@ -68,8 +68,8 @@ const dataDiri = {
           "perusahaan": "PT Rekayasa Aplikasi Digital",
           "posisi": "Full-Stack Development",
           "waktu": {
-            "mulai": "Sept 2020",
-            "selesai": "Dec 2021"
+            "mulai": "9/2020",
+            "selesai": "12/2021"
           },
           "tags":[
             {
@@ -104,8 +104,8 @@ const dataDiri = {
           "perusahaan": "PT Chitra Maju Jaya Abadi",
           "posisi": "Full-Stack Development",
           "waktu": {
-            "mulai": "Jan 2019",
-            "selesai": "Sept 2020"
+            "mulai": "1/2019",
+            "selesai": "9/2020"
           },
           "tags":[
             {
@@ -127,8 +127,8 @@ const dataDiri = {
             "perusahaan": "LSP Nusantara",
             "posisi": "IT Support",
             "waktu": {
-                "mulai": "Jul 2016",
-                "selesai": "Jan 2019"
+                "mulai": "7/2016",
+                "selesai": "1/2019"
             },
             "tags":[],
             "tugas": [
@@ -212,6 +212,35 @@ const dataDiri = {
 
 }
 
+function getHowLongIworks(start, end) {
+    const month = ['0','Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthStart = parseInt(start.split('/')[0]);
+    const yearStart = parseInt(start.split('/')[1]);
+    let monthEnd = 0
+    let yearEnd = 0
+    if(end != 'now') {
+        monthEnd = parseInt(end.split('/')[0]);
+        yearEnd = parseInt(end.split('/')[1]);
+        
+    } else {
+        const now = new Date();
+        yearEnd = now.getFullYear();
+        monthEnd = now.getMonth() + 1;
+    }
+        const totalStartMonths = yearStart * 12 + monthStart;
+        const totalEndMonths = yearEnd * 12 + monthEnd;
+        
+        const monthDifference = totalEndMonths - totalStartMonths;
+        const duration = Math.floor(monthDifference / 12) 
+        const sisa = monthDifference - (12 * duration)
+        const hasil = `<span> ${month[monthStart]} ${yearStart} - ${end != 'now' ? month[monthEnd] : ''} ${end != 'now' ? yearEnd : 'Present'}  </span>
+        <i>( ${duration} Years ${sisa} months )</i>`
+        return hasil;
+}
+
+// Example usage:
+
+
 function loopClient() {
     const parent = $('.client');
     const client = [
@@ -294,6 +323,7 @@ $(document).ready(() => {
                         </a>
                         <div id="section1ContentId-${i}" class="collapse ${status}" role="tabpanel" aria-labelledby="section1HeaderId-${i}">
                             <div class="card-body">
+                                Period of time :${getHowLongIworks(x.waktu.mulai, x.waktu.selesai)} <br>
                                 Role : <quote>${x.posisi}</quote> <br>
                                 Tags :  ${ x.tags.length ? settTags(x.tags) : '-' }<br>
                                 Responsibility :
