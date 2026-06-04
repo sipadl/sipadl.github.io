@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipadl - Full Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .contact-links a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+
+        /* About Section */
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: #f5f7fa;
+            border-left: 4px solid #667eea;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #e8ecff;
+            border-left-color: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        /* Experience */
+        .experience-item {
+            border-left: 4px solid #667eea;
+            padding-left: 25px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .period {
+            color: #999;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .accomplishments {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .accomplishments li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f9fafb;
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-size: 0.95em;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 2px solid #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .contact-links {
+                gap: 15px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Sipadl</h1>
+            <p class="subtitle">Full Stack Developer | Backend • Frontend • DevOps</p>
+            <div class="contact-links">
+                <a href="mailto:fadel.mm01@gmail.com">📧 Email</a>
+                <a href="https://github.com/sipadl" target="_blank">💻 GitHub</a>
+                <a href="https://linkedin.com/in/fadelmuhammad-7300ab170" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section>
+            <h2>About</h2>
+            <p class="about-text">
+                Full stack developer with expertise in backend microservices, modern frontend frameworks, and containerized infrastructure. 
+                Passionate about building scalable, maintainable systems and automating deployment pipelines. 
+                Experience with Java/Spring Boot, React/TypeScript, Docker, Kubernetes, and cloud-native architectures.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Java / Spring Boot</div>
+                <div class="skill-tag">React / TypeScript</div>
+                <div class="skill-tag">Docker / Kubernetes</div>
+                <div class="skill-tag">PostgreSQL / Redis</div>
+                <div class="skill-tag">AWS / Cloud</div>
+                <div class="skill-tag">CI/CD Pipelines</div>
+                <div class="skill-tag">REST APIs</div>
+                <div class="skill-tag">Microservices</div>
+                <div class="skill-tag">Git / GitHub</div>
+                <div class="skill-tag">Linux / Bash</div>
+                <div class="skill-tag">Monitoring</div>
+                <div class="skill-tag">Security</div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section>
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company">Tech Startup</div>
+                <div class="job-title">Senior Full Stack Engineer</div>
+                <div class="period">2023 — Present</div>
+                <ul class="accomplishments">
+                    <li>Architected and deployed microservices handling 1M+ daily requests</li>
+                    <li>Reduced deployment time by 70% through Kubernetes automation</li>
+                    <li>Led team of 3 engineers on critical infrastructure projects</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Mid-size SaaS</div>
+                <div class="job-title">Full Stack Developer</div>
+                <div class="period">2021 — 2023</div>
+                <ul class="accomplishments">
+                    <li>Built RESTful APIs serving 100K+ users with Spring Boot</li>
+                    <li>Developed responsive React dashboards with real-time data</li>
+                    <li>Containerized applications and set up CI/CD pipelines</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Freelance</div>
+                <div class="job-title">Backend Developer</div>
+                <div class="period">2020 — 2021</div>
+                <ul class="accomplishments">
+                    <li>Delivered backend services for multiple client projects</li>
+                    <li>Designed database schemas and optimized queries</li>
+                    <li>Deployed applications to cloud infrastructure</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">Spring Boot Microservices</div>
+                    <p class="project-desc">
+                        Production-ready microservices architecture with service discovery, 
+                        circuit breakers, and distributed tracing.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">React Admin Dashboard</div>
+                    <p class="project-desc">
+                        Full-featured admin dashboard with authentication, data visualization, 
+                        and real-time updates using modern React patterns.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">Recharts</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Docker & Kubernetes DevOps</div>
+                    <p class="project-desc">
+                        Complete DevOps infrastructure with containerization, orchestration, 
+                        monitoring, and automated deployment pipelines.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Prometheus</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Sipadl. Open to work. <a href="https://github.com/sipadl" target="_blank">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
