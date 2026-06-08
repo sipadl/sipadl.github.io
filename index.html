@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fadel Muhammad - Software Engineer</title>
+    <title>Fadel Muhammad — Senior Backend Engineer</title>
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,438 +16,483 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             color: #1a1a1a;
+            background: #ffffff;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Header/Hero */
-        header {
-            padding: 80px 0 60px;
+        /* Header */
+        .header {
+            padding: 64px 0 48px;
             border-bottom: 1px solid #e5e5e5;
         }
 
-        header h1 {
-            font-size: 40px;
+        .header h1 {
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 12px;
             letter-spacing: -0.02em;
+            margin-bottom: 4px;
         }
 
-        header .meta {
-            font-size: 18px;
+        .header .title {
+            font-size: 1rem;
             color: #666;
-            margin-bottom: 8px;
-        }
-
-        header .tagline {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 24px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            margin-bottom: 20px;
         }
 
         .contact-links {
             display: flex;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 8px 20px;
+            list-style: none;
+            font-size: 0.875rem;
+        }
+
+        .contact-links li {
+            color: #666;
         }
 
         .contact-links a {
-            font-size: 15px;
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
+            color: #1a1a1a;
         }
 
         .contact-links a:hover {
-            color: #0052a3;
+            color: #0066cc;
+            text-decoration: none;
         }
 
-        /* Main content */
-        main {
-            padding: 60px 0;
+        /* Section */
+        .section {
+            padding: 48px 0;
+            border-bottom: 1px solid #e5e5e5;
         }
 
-        section {
-            margin-bottom: 80px;
+        .section:last-of-type {
+            border-bottom: none;
         }
 
-        section:last-child {
-            margin-bottom: 0;
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            letter-spacing: -0.01em;
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #666;
+            margin-bottom: 20px;
         }
 
         /* About */
-        .about-text {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 16px;
+        .about p {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 14px;
+            line-height: 1.7;
         }
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 28px;
         }
 
-        .stat-item {
-            display: flex;
-            flex-direction: column;
+        .stat {
+            text-align: center;
+            padding: 16px 8px;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            background: #f8f9fa;
         }
 
         .stat-number {
-            font-size: 32px;
+            display: block;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: #000;
-            margin-bottom: 6px;
+            color: #0066cc;
+            line-height: 1.2;
         }
 
         .stat-label {
-            font-size: 13px;
+            display: block;
+            font-size: 0.75rem;
             color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
+            margin-top: 4px;
         }
 
         /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .skill-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .skill-group h3 {
-            font-size: 16px;
+        .skill-category h3 {
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 16px;
-            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #666;
+            margin-bottom: 8px;
         }
 
-        .skill-list {
+        .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 6px;
         }
 
-        .skill-badge {
-            background: #f0f0f0;
+        .tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            background: #f8f9fa;
             color: #1a1a1a;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            border: 1px solid #e0e0e0;
         }
 
         /* Experience */
         .exp-item {
-            margin-bottom: 48px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 32px;
         }
 
         .exp-item:last-child {
-            border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
 
-        .exp-title {
-            font-size: 18px;
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-size: 1rem;
             font-weight: 600;
-            color: #000;
-            margin-bottom: 6px;
         }
 
-        .exp-meta {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 16px;
+        .exp-date {
+            font-size: 0.825rem;
+            color: #666;
+            white-space: nowrap;
         }
 
-        .exp-bullets {
-            font-size: 15px;
-            color: #444;
-            margin-left: 20px;
-        }
-
-        .exp-bullets li {
+        .exp-company {
+            font-size: 0.9rem;
+            color: #666;
             margin-bottom: 10px;
-            line-height: 1.7;
+        }
+
+        .exp-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-item li {
+            position: relative;
+            font-size: 0.9rem;
+            color: #333;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .exp-item li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .exp-tech {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .project-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            padding: 20px;
+            background: #ffffff;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .project-tech {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            font-size: 0.8rem;
+            color: #333;
+            line-height: 1.5;
         }
 
         /* Footer */
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid #e5e5e5;
+        .footer {
+            padding: 32px 0;
             text-align: center;
-            color: #999;
-            font-size: 14px;
+            font-size: 0.825rem;
+            color: #666;
+            border-top: 1px solid #e5e5e5;
         }
 
-        /* Mobile Responsive */
+        /* Responsive */
         @media (max-width: 640px) {
             .container {
                 padding: 0 16px;
             }
 
-            header {
-                padding: 40px 0 30px;
+            .header {
+                padding: 40px 0 32px;
             }
 
-            header h1 {
-                font-size: 28px;
-                margin-bottom: 10px;
+            .header h1 {
+                font-size: 1.5rem;
             }
 
-            header .meta {
-                font-size: 16px;
+            .header .title {
+                font-size: 0.875rem;
             }
 
-            header .tagline {
-                font-size: 13px;
-                margin-bottom: 16px;
-            }
-
-            .contact-links {
-                gap: 12px;
-                font-size: 14px;
-            }
-
-            .contact-links a {
-                font-size: 14px;
-            }
-
-            main {
-                padding: 40px 0;
-            }
-
-            section {
-                margin-bottom: 50px;
-            }
-
-            h2 {
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-
-            .about-text {
-                font-size: 15px;
-                margin-bottom: 14px;
+            .section {
+                padding: 32px 0;
             }
 
             .stats {
-                gap: 24px;
-                margin-top: 24px;
-            }
-
-            .stat-number {
-                font-size: 24px;
-            }
-
-            .stat-label {
-                font-size: 12px;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 24px;
             }
 
-            .exp-item {
-                margin-bottom: 32px;
-                padding-bottom: 32px;
-            }
-
-            .exp-title {
-                font-size: 16px;
-            }
-
-            .exp-meta {
-                font-size: 13px;
-            }
-
-            .exp-bullets {
-                font-size: 14px;
-                margin-left: 16px;
-            }
-
-            .exp-bullets li {
-                margin-bottom: 8px;
-            }
-
-            footer {
-                padding: 40px 0;
-                font-size: 13px;
+            .exp-header {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
             <h1>Fadel Muhammad</h1>
-            <p class="meta">Senior Software Engineer</p>
-            <p class="tagline">Java • Spring Boot • React • Kubernetes • AI/LLM</p>
-            <div class="contact-links">
-                <a href="mailto:fadel.mm01@gmail.com">Email</a>
-                <a href="https://github.com/sipadl" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/fadelmuhammad-7300ab170" target="_blank">LinkedIn</a>
+            <p class="title">Senior Backend Engineer | Java · Spring Boot · Kubernetes</p>
+            <ul class="contact-links">
+                <li>📧 <a href="mailto:fadel.mm01@gmail.com">fadel.mm01@gmail.com</a></li>
+                <li>📞 +62 812-9066-9170</li>
+                <li>🔗 <a href="https://linkedin.com/in/fadelmuhammad-7300ab170" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li>💻 <a href="https://github.com/sipadl" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">About</p>
+            <div class="about">
+                <p>Senior Backend Engineer with 5+ years experience architecting scalable microservices for banking and fintech. Expert in Java, Spring Boot, Kubernetes, and AI integration. Track record: Bank Mandiri QRIS PWA (50K+ merchants, 10K+ TPS, 99.9% uptime), Anti-Fraud Detection (95% fraud reduction, 100K+ daily transactions), Inventory Management System.</p>
+                <p>Passionate about building reliable, high-throughput systems that handle real-world financial workloads. Combines deep backend expertise with modern DevOps practices and emerging AI/ML capabilities to deliver end-to-end solutions.</p>
             </div>
-        </header>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Merchants</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100K+</span>
+                    <span class="stat-label">Daily Txns</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <main>
-            <section>
-                <h2>About</h2>
-                <p class="about-text">
-                    Software Engineer with 5+ years of experience building large-scale web and mobile applications 
-                    for banking, fintech, and merchant platforms. Specialized in backend architecture using Java and 
-                    Spring Boot microservices, with expertise in Kubernetes orchestration and cloud infrastructure.
-                </p>
-                <p class="about-text">
-                    Proven track record delivering strategic projects for Bank Mandiri and OCBC. Experienced in 
-                    integrating AI/LLM capabilities into production systems, designing fraud detection systems, 
-                    and ensuring transaction security at scale.
-                </p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2</div>
-                        <div class="stat-label">Major Banks</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100K+</div>
-                        <div class="stat-label">Users Served</div>
+    <!-- Skills -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Skills</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Microservices</span>
+                        <span class="tag">REST API</span>
                     </div>
                 </div>
-            </section>
-
-            <section>
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-group">
-                        <h3>Backend</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Java</span>
-                            <span class="skill-badge">Spring Boot</span>
-                            <span class="skill-badge">Microservices</span>
-                            <span class="skill-badge">REST API</span>
-                            <span class="skill-badge">Laravel</span>
-                            <span class="skill-badge">Express.js</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Frontend</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">React JS</span>
-                            <span class="skill-badge">TypeScript</span>
-                            <span class="skill-badge">PWA</span>
-                            <span class="skill-badge">HTML/CSS</span>
-                            <span class="skill-badge">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>DevOps & Tools</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Docker</span>
-                            <span class="skill-badge">Kubernetes</span>
-                            <span class="skill-badge">CI/CD</span>
-                            <span class="skill-badge">Git</span>
-                            <span class="skill-badge">AWS</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Database</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">PostgreSQL</span>
-                            <span class="skill-badge">MySQL</span>
-                            <span class="skill-badge">Redis</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>AI & Integration</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">OpenAI API</span>
-                            <span class="skill-badge">Claude API</span>
-                            <span class="skill-badge">LLM Integration</span>
-                            <span class="skill-badge">RAG Pipeline</span>
-                        </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="tags">
+                        <span class="tag">React JS</span>
+                        <span class="tag">TypeScript</span>
                     </div>
                 </div>
-            </section>
-
-            <section>
-                <h2>Experience</h2>
-
-                <div class="exp-item">
-                    <div class="exp-title">Senior Software Engineer</div>
-                    <div class="exp-meta">Yokke • Jan 2022 – Present (3+ years)</div>
-                    <ul class="exp-bullets">
-                        <li>Led backend architecture using Spring Boot microservices for PWA QRIS Mandiri (Livin Usaha), serving thousands of Bank Mandiri merchants nationwide</li>
-                        <li>Designed Anti-Fraud Detection System for Bank Mandiri, strengthening digital transaction security across the platform</li>
-                        <li>Built & optimized Inventory Management System (IMS) for operational performance</li>
-                        <li>Integrated AI/LLM capabilities for automation & intelligent data processing</li>
-                        <li>Deployed microservices on Kubernetes for high availability & seamless scaling</li>
-                        <li>Developed Nyala Merchant by OCBC & internal employee training platform</li>
-                    </ul>
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">MySQL</span>
+                    </div>
                 </div>
-
-                <div class="exp-item">
-                    <div class="exp-title">Software Engineer</div>
-                    <div class="exp-meta">PT. Rekayasa Aplikasi Digital • Oct 2020 – Dec 2021</div>
-                    <ul class="exp-bullets">
-                        <li>Lead Developer for Sekolahdigi & Bantubeli projects, directing backend, frontend, and mobile teams</li>
-                        <li>Built scalable web & mobile applications using Laravel and Express.js</li>
-                        <li>Integrated payment gateways & third-party logistics services into e-commerce systems</li>
-                        <li>Optimized code & improved UX through systematic refactoring</li>
-                    </ul>
+                <div class="skill-category">
+                    <h3>DevOps</h3>
+                    <div class="tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">GCP</span>
+                    </div>
                 </div>
-
-                <div class="exp-item">
-                    <div class="exp-title">Software Engineer</div>
-                    <div class="exp-meta">PT Sahabat Sejahtera • Jan 2019 – Oct 2020</div>
-                    <ul class="exp-bullets">
-                        <li>Built responsive company catalog website using CodeIgniter framework</li>
-                        <li>Managed product data & optimized content management workflows</li>
-                    </ul>
+                <div class="skill-category">
+                    <h3>AI/ML</h3>
+                    <div class="tags">
+                        <span class="tag">LLM Integration</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
                 </div>
-            </section>
-        </main>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">Jira</span>
+                        <span class="tag">Swagger</span>
+                        <span class="tag">Terraform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>© 2026 Fadel Muhammad. Open to opportunities.</p>
-        </footer>
-    </div>
+    <!-- Experience -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Experience</p>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">Senior Software Engineer</span>
+                    <span class="exp-date">Jan 2022 — Present</span>
+                </div>
+                <p class="exp-company">Yokke</p>
+                <ul>
+                    <li>Architected Spring Boot microservices for QRIS PWA Bank Mandiri</li>
+                    <li>Designed Anti-Fraud Detection System with ML</li>
+                    <li>Built IMS with PostgreSQL, 300% data accessibility improvement</li>
+                    <li>AI/LLM integration for workflow automation</li>
+                    <li>Kubernetes deployment with 99.9% uptime SLA</li>
+                    <li>Nyala Merchant platform for OCBC</li>
+                </ul>
+                <p class="exp-tech">Tech: Spring Boot, K8s, PostgreSQL, React, GCP, AI APIs</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="exp-role">Software Engineer / Lead Developer</span>
+                    <span class="exp-date">Oct 2020 — Dec 2021</span>
+                </div>
+                <p class="exp-company">PT. Rekayasa Aplikasi Digital</p>
+                <ul>
+                    <li>Led backend/frontend teams for e-learning platforms</li>
+                    <li>Built scalable web/mobile apps with Laravel and Express.js</li>
+                    <li>Integrated Midtrans payment + logistics APIs</li>
+                    <li>Optimized API: 500ms → 100ms response time</li>
+                </ul>
+                <p class="exp-tech">Tech: Laravel, Express.js, React, MySQL, Docker</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">Projects</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>QRIS PWA for Bank Mandiri</h3>
+                    <p class="project-tech">Java, Spring Boot, K8s, React, PostgreSQL</p>
+                    <p class="project-desc">50K+ merchants, 10K+ TPS</p>
+                </div>
+                <div class="project-card">
+                    <h3>Anti-Fraud Detection</h3>
+                    <p class="project-tech">Java, Spring Boot, ML, Redis</p>
+                    <p class="project-desc">95% fraud reduction, 100K+ txns/day</p>
+                </div>
+                <div class="project-card">
+                    <h3>Inventory Management System</h3>
+                    <p class="project-tech">Spring Boot, React, PostgreSQL, Docker</p>
+                    <p class="project-desc">Real-time tracking, automated reporting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fadel Muhammad. Open to freelance backend projects.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
