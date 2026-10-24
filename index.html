@@ -1,283 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fadel Muhammad — Full-Stack Engineer & Systems Builder</title>
-    <meta name="description" content="Full-stack engineer specializing in scalable SaaS, fintech backends, AI automation, and DevOps. Open to freelance.">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: #1a1a1a;
-            background: #ffffff;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    <title>Fadel Muhammad — Senior Full-Stack Engineer</title>
+    <meta name="description"
+        content="Resume of Fadel Muhammad. Full-Stack Developer with 5+ years experience building scalable systems, fintech platforms, and enterprise microservices.">
+    <meta name="author" content="Fadel Muhammad">
 
-        /* Header */
-        .header { padding: 64px 0 48px; border-bottom: 1px solid #e5e5e5; }
-        .header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
-        .header .title { font-size: 1rem; color: #666; margin-bottom: 20px; }
-        .contact-links { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; font-size: 0.875rem; }
-        .contact-links li { color: #666; }
-        .contact-links a { color: #1a1a1a; }
-        .contact-links a:hover { color: #0066cc; text-decoration: none; }
+    <!-- Typography: Plus Jakarta Sans + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-        /* Section */
-        .section { padding: 48px 0; border-bottom: 1px solid #e5e5e5; }
-        .section:last-of-type { border-bottom: none; }
-        .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #666; margin-bottom: 20px; }
-
-        /* About */
-        .about p { font-size: 0.95rem; color: #333; margin-bottom: 14px; line-height: 1.7; }
-        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
-        .stat { text-align: center; padding: 16px 8px; border: 1px solid #e5e5e5; border-radius: 6px; background: #f8f9fa; }
-        .stat-number { display: block; font-size: 1.25rem; font-weight: 700; color: #0066cc; line-height: 1.2; }
-        .stat-label { display: block; font-size: 0.75rem; color: #666; margin-top: 4px; }
-
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .skill-category h3 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #666; margin-bottom: 8px; }
-        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-        .tag { display: inline-block; font-size: 0.8rem; padding: 4px 10px; border: 1px solid #e5e5e5; border-radius: 4px; background: #f8f9fa; color: #1a1a1a; }
-
-        /* Experience */
-        .exp-item { margin-bottom: 32px; }
-        .exp-item:last-child { margin-bottom: 0; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
-        .exp-role { font-size: 1rem; font-weight: 600; }
-        .exp-date { font-size: 0.825rem; color: #666; white-space: nowrap; }
-        .exp-company { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
-        .exp-item ul { list-style: none; padding: 0; }
-        .exp-item li { position: relative; font-size: 0.9rem; color: #333; padding-left: 16px; margin-bottom: 6px; line-height: 1.5; }
-        .exp-item li::before { content: '·'; position: absolute; left: 0; color: #0066cc; font-weight: 700; font-size: 1.1rem; line-height: 1.4; }
-        .exp-tech { font-size: 0.8rem; color: #666; margin-top: 10px; }
-
-        /* Projects */
-        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-        .project-card { border: 1px solid #e5e5e5; border-radius: 6px; padding: 20px; background: #ffffff; transition: box-shadow 0.2s ease; }
-        .project-card:hover { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); }
-        .project-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
-        .project-tech { font-size: 0.75rem; color: #666; margin-bottom: 8px; }
-        .project-desc { font-size: 0.8rem; color: #333; line-height: 1.5; }
-        .project-link { font-size: 0.75rem; color: #0066cc; margin-top: 8px; display: inline-block; }
-
-        /* Footer */
-        .footer { padding: 32px 0; text-align: center; font-size: 0.825rem; color: #666; border-top: 1px solid #e5e5e5; }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            .container { padding: 0 16px; }
-            .header { padding: 40px 0 32px; }
-            .header h1 { font-size: 1.5rem; }
-            .header .title { font-size: 0.875rem; }
-            .section { padding: 32px 0; }
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .exp-header { flex-direction: column; }
-        }
-    </style>
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1>Fadel Muhammad</h1>
-            <p class="title">Full-Stack Engineer · Systems Builder · AI Automation</p>
-            <ul class="contact-links">
-                <li>📧 <a href="mailto:fadel.mm01@gmail.com">fadel.mm01@gmail.com</a></li>
-                <li>📞 +62 812-9066-9170</li>
-                <li>🔗 <a href="https://linkedin.com/in/fadelmuhammad-7300ab170" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li>💻 <a href="https://github.com/sipadl" target="_blank" rel="noopener">GitHub</a></li>
-            </ul>
-        </div>
-    </header>
+    <div class="page-container">
 
-    <!-- About -->
-    <section class="section">
-        <div class="container">
-            <p class="section-label">About</p>
-            <div class="about">
-                <p>Full-stack engineer with 5+ years building production systems across fintech, SaaS, and AI automation. From Spring Boot microservices handling 10K+ TPS at Bank Mandiri to Next.js SaaS apps deployed on Vercel + VPS — I build end-to-end.</p>
-                <p>Currently running autonomous AI pipelines, crypto DCA bots, and shipping freelance projects. Comfortable across the entire stack: backend APIs, frontend UI, database design, container orchestration, and CI/CD.</p>
+        <!-- Top Recruiter Quick Action Bar -->
+        <header class="app-header">
+            <div class="recruiter-badge">
+                <span class="status-indicator"></span>
+                <span class="badge-text">Available for Senior Full-Stack Roles</span>
             </div>
-            <div class="stats">
-                <div class="stat">
-                    <span class="stat-number">5+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">50K+</span>
-                    <span class="stat-label">Merchants Served</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">10K+</span>
-                    <span class="stat-label">Peak TPS</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">99.9%</span>
-                    <span class="stat-label">Uptime SLA</span>
-                </div>
+            <div class="recruiter-actions">
+                <button type="button" id="btnCopyEmail" class="action-btn" title="Copy email address">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Copy Email</span>
+                </button>
+                <a href="doc/cv-ats-fadel-muhammad-a1.pdf" target="_blank" class="action-btn primary"
+                    title="View original ATS PDF">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Download CV (PDF)</span>
+                </a>
+                <button type="button" id="btnPrint" class="action-btn" title="Print resume">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    <span>Print</span>
+                </button>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Skills -->
-    <section class="section">
-        <div class="container">
-            <p class="section-label">Skills</p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Spring Boot</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">REST API</span>
+        <!-- Main CV Document Frame -->
+        <main class="cv-layout">
+
+            <!-- Profile Hero Section -->
+            <section class="profile-hero">
+                <div class="hero-left">
+                    <div class="avatar-badge">FM</div>
+                    <div class="hero-titles">
+                        <h1 class="candidate-name">Fadel Muhammad</h1>
+                        <p class="candidate-headline">Software Development · Full-Stack Developer</p>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">React</span>
-                        <span class="tag">TypeScript</span>
-                    </div>
+
+                <div class="hero-contacts">
+                    <a href="mailto:fadel.mm01@gmail.com" class="contact-pill" title="Send email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>fadel.mm01@gmail.com</span>
+                    </a>
+                    <a href="tel:+6281290669170" class="contact-pill" title="Call">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <span>+62 812-9066-9170</span>
+                    </a>
+                    <a href="https://linkedin.com/in/fadelmuhammad-7300ab170" target="_blank" rel="noopener"
+                        class="contact-pill" title="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/sipadl" target="_blank" rel="noopener" class="contact-pill"
+                        title="GitHub Profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        <span>github.com/sipadl</span>
+                    </a>
                 </div>
-                <div class="skill-category">
-                    <h3>Database</h3>
-                    <div class="tags">
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Supabase</span>
-                        <span class="tag">Prisma</span>
-                        <span class="tag">Redis</span>
-                    </div>
+            </section>
+
+            <!-- 2-Column Content Layout: Main Work vs Sidebar Specs -->
+            <div class="content-grid">
+
+                <!-- Left Column (Primary Focus: About, Experience, Achievements) -->
+                <div class="primary-column">
+
+                    <!-- About / Summary -->
+                    <section class="section-card">
+                        <div class="section-title-wrap">
+                            <span class="section-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </span>
+                            <h2 class="section-heading">Executive Summary</h2>
+                        </div>
+                        <div class="section-content text-block">
+                            <p>
+                                Passionate and results-driven <strong>Full-Stack Developer</strong> with over five years
+                                of hands-on experience in designing, developing, and deploying scalable web and mobile
+                                applications. Skilled in building robust systems using modern frameworks like
+                                <strong>Node</strong>, <strong>Laravel</strong>, and <strong>Spring Boot</strong>.
+                            </p>
+                            <p>
+                                Throughout my career, I've successfully contributed to the development of financial
+                                systems, merchant platforms, and enterprise-level applications that enhance business
+                                performance. Committed to writing clean, maintainable code and solving complex technical
+                                challenges in fast-paced environments.
+                            </p>
+                        </div>
+                    </section>
+
+
+                    <!-- Professional Experience -->
+                    <section class="section-card">
+                        <div class="section-title-wrap">
+                            <span class="section-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </span>
+                            <h2 class="section-heading">Professional Experience</h2>
+                        </div>
+                        <div class="section-content timeline">
+
+                            <!-- Role 1 -->
+                            <article class="timeline-entry">
+                                <div class="timeline-dot"></div>
+                                <div class="entry-header">
+                                    <div>
+                                        <h3 class="role-title">Software Development</h3>
+                                        <span class="company-name">PT Mitra Transaksi Indonesia</span>
+                                    </div>
+                                    <span class="date-badge">Jan 2022 – Present</span>
+                                </div>
+                                <ul class="bullet-list">
+                                    <li>Developed and maintained <strong>PWA QRIS Mandiri (Livin Usaha)</strong> using
+                                        React JS and Spring Boot.</li>
+                                    <li>Designed and implemented an <strong>Anti-Fraud Detection System</strong> for
+                                        Bank Mandiri to enhance transaction security.</li>
+                                    <li>Built and optimized an <strong>ERP & Real-Time Asset Monitoring System</strong>
+                                        to track live EDC merchant assets across multiple member banks and vendors,
+                                        significantly improving data accessibility and operational efficiency.</li>
+                                    <li>Developed <strong>Nyala Merchant By OCBC</strong> and training website
+                                        applications for internal employee learning.</li>
+                                    <li>Led backend architecture using <strong>microservices with Spring Boot</strong>
+                                        for high scalability.</li>
+                                    <li>Collaborated with cross-functional teams to fix bugs, add new features, and
+                                        maintain API documentation.</li>
+                                </ul>
+                            </article>
+
+                            <!-- Role 2 -->
+                            <article class="timeline-entry">
+                                <div class="timeline-dot"></div>
+                                <div class="entry-header">
+                                    <div>
+                                        <h3 class="role-title">Lead Developer & Full-Stack Developer</h3>
+                                        <span class="company-name">PT Rekayasa Aplikasi Digital</span>
+                                    </div>
+                                    <span class="date-badge">Oct 2020 – Dec 2021</span>
+                                </div>
+                                <ul class="bullet-list">
+                                    <li>Served as <strong>Lead Developer</strong> for the <em>Sekolahdigi</em> &
+                                        <em>Bantubeli</em> projects.
+                                    </li>
+                                    <li>Developed and deployed scalable web and mobile applications using
+                                        <strong>Laravel</strong> and <strong>Express</strong>.
+                                    </li>
+                                    <li>Integrated payment gateways and third-party logistics services into e-commerce
+                                        systems.</li>
+                                    <li>Coordinated between backend, frontend, and mobile teams to ensure smooth product
+                                        delivery.</li>
+                                    <li>Improved user experience and backend efficiency through code optimization and
+                                        refactoring.</li>
+                                </ul>
+                            </article>
+
+                            <!-- Role 3 -->
+                            <article class="timeline-entry">
+                                <div class="timeline-dot"></div>
+                                <div class="entry-header">
+                                    <div>
+                                        <h3 class="role-title">Full-Stack Developer</h3>
+                                        <span class="company-name">PT Sahabat Sejahtera</span>
+                                    </div>
+                                    <span class="date-badge">Jan 2019 – Oct 2020</span>
+                                </div>
+                                <ul class="bullet-list">
+                                    <li>Built a responsive company catalog website using <strong>CodeIgniter</strong>.
+                                    </li>
+                                    <li>Managed product data and optimized content management workflows.</li>
+                                    <li>Ensured system stability and scalability through proactive maintenance and
+                                        performance improvements.</li>
+                                </ul>
+                            </article>
+
+                        </div>
+                    </section>
+
+                    <!-- Achievements (Formal ATS order following Professional Experience) -->
+                    <section class="section-card">
+                        <div class="section-title-wrap">
+                            <span class="section-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </span>
+                            <h2 class="section-heading">Achievements</h2>
+                        </div>
+                        <div class="section-content">
+                            <ul class="bullet-list" style="margin-top: 0;">
+                                <li>Optimized multi-bank EDC asset monitoring & operational workflows, resulting in
+                                    company budget savings of over <strong>4 billion IDR / year</strong>.</li>
+                                <li>Improved API response time by <strong>40%</strong> through microservice architecture
+                                    enhancements.</li>
+                                <li>Recognized for high-quality code and consistent delivery of critical business
+                                    applications.</li>
+                            </ul>
+                        </div>
+                    </section>
+
                 </div>
-                <div class="skill-category">
-                    <h3>DevOps</h3>
-                    <div class="tags">
-                        <span class="tag">Docker</span>
-                        <span class="tag">Kubernetes</span>
-                        <span class="tag">Vercel</span>
-                        <span class="tag">GCP</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>AI / Automation</h3>
-                    <div class="tags">
-                        <span class="tag">LLM Integration</span>
-                        <span class="tag">Hermes Agent</span>
-                        <span class="tag">Media Pipeline</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Payments & APIs</h3>
-                    <div class="tags">
-                        <span class="tag">Midtrans</span>
-                        <span class="tag">QRIS</span>
-                        <span class="tag">Telegram Bot</span>
-                        <span class="tag">Binance API</span>
-                    </div>
-                </div>
+
+                <!-- Right Column (Sidebar: Skills, Education, Languages) -->
+                <aside class="sidebar-column">
+
+                    <!-- Technical Skills -->
+                    <section class="section-card">
+                        <div class="section-title-wrap">
+                            <span class="section-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </span>
+                            <h2 class="section-heading">Technical Skills</h2>
+                        </div>
+                        <div class="section-content skill-groups">
+
+                            <div class="skill-category">
+                                <span class="category-name">Programming Languages</span>
+                                <div class="tag-cloud">
+                                    <span class="tag">Java</span>
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">PHP</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="category-name">Frameworks & Libraries</span>
+                                <div class="tag-cloud">
+                                    <span class="tag">Spring Boot</span>
+                                    <span class="tag">React JS</span>
+                                    <span class="tag">React Native</span>
+                                    <span class="tag">Laravel</span>
+                                    <span class="tag">Express Js</span>
+                                    <span class="tag">NestJs</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="category-name">Databases</span>
+                                <div class="tag-cloud">
+                                    <span class="tag">Oracle</span>
+                                    <span class="tag">MySQL</span>
+                                    <span class="tag">Firebase (NoSQL)</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="category-name">Tools & DevOps</span>
+                                <div class="tag-cloud">
+                                    <span class="tag">Git</span>
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">Kubernetes</span>
+                                    <span class="tag">Nginx</span>
+                                    <span class="tag">Jenkins</span>
+                                    <span class="tag">Postman</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <span class="category-name">Architecture & Concepts</span>
+                                <div class="tag-cloud">
+                                    <span class="tag">Microservices</span>
+                                    <span class="tag">REST API</span>
+                                    <span class="tag">CI/CD</span>
+                                    <span class="tag">Agile Development</span>
+                                    <span class="tag">Data Structures</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- Education -->
+                    <section class="section-card">
+                        <div class="section-title-wrap">
+                            <span class="section-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                            </span>
+                            <h2 class="section-heading">Education</h2>
+                        </div>
+                        <div class="section-content education-box">
+                            <div class="edu-degree">Diploma in System Information</div>
+                            <div class="edu-school">Universitas Bina Sarana Informatika</div>
+                            <div class="edu-year">2017 – 2020</div>
+                        </div>
+                    </section>
+
+                    <!-- Languages -->
+                    <section class="section-card">
+                        <div class="section-title-wrap">
+                            <span class="section-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <h2 class="section-heading">Languages</h2>
+                        </div>
+                        <div class="section-content language-list">
+                            <div class="language-row">
+                                <span class="lang-title">English</span>
+                                <span class="lang-badge">Fluent (Written & Spoken)</span>
+                            </div>
+                            <div class="language-row">
+                                <span class="lang-title">Bahasa Indonesia</span>
+                                <span class="lang-badge">Native</span>
+                            </div>
+                        </div>
+                    </section>
+
+                </aside>
+
             </div>
-        </div>
-    </section>
 
-    <!-- Experience -->
-    <section class="section">
-        <div class="container">
-            <p class="section-label">Experience</p>
+            <!-- Discrete Footer -->
+            <footer class="cv-footer">
+                <p>Curriculum Vitae — Fadel Muhammad · github.com/sipadl</p>
+            </footer>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="exp-role">Senior Software Engineer</span>
-                    <span class="exp-date">Jan 2022 — Present</span>
-                </div>
-                <p class="exp-company">Yokke</p>
-                <ul>
-                    <li>Architected Spring Boot microservices for QRIS PWA Bank Mandiri — 50K+ merchants, 10K+ TPS</li>
-                    <li>Anti-Fraud Detection System with ML — 95% fraud reduction, 100K+ daily txns</li>
-                    <li>Inventory Management System — 300% data accessibility improvement</li>
-                    <li>AI/LLM integration for workflow automation</li>
-                    <li>Kubernetes deployment with 99.9% uptime SLA</li>
-                    <li>Nyala Merchant platform for OCBC</li>
-                </ul>
-                <p class="exp-tech">Tech: Spring Boot, K8s, PostgreSQL, React, GCP, AI APIs</p>
-            </div>
+        </main>
+    </div>
 
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="exp-role">Software Engineer / Lead Developer</span>
-                    <span class="exp-date">Oct 2020 — Dec 2021</span>
-                </div>
-                <p class="exp-company">PT. Rekayasa Aplikasi Digital</p>
-                <ul>
-                    <li>Led backend/frontend teams for e-learning platforms</li>
-                    <li>Built scalable web/mobile apps with Laravel and Express.js</li>
-                    <li>Integrated Midtrans payment + logistics APIs</li>
-                    <li>Optimized API: 500ms → 100ms response time</li>
-                </ul>
-                <p class="exp-tech">Tech: Laravel, Express.js, React, MySQL, Docker</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section">
-        <div class="container">
-            <p class="section-label">Projects</p>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>POS SaaS System</h3>
-                    <p class="project-tech">Next.js, Prisma, Supabase, Midtrans</p>
-                    <p class="project-desc">Point-of-sale SaaS for warungs with real-time inventory, payment gateway, and VPS deployment.</p>
-                    <a class="project-link" href="https://github.com/sipadl/saas-kasir-warung-post" target="_blank">GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>QRIS PWA for Bank Mandiri</h3>
-                    <p class="project-tech">Java, Spring Boot, K8s, React, PostgreSQL</p>
-                    <p class="project-desc">Payment PWA handling 50K+ merchants and 10K+ TPS with 99.9% uptime SLA.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Anti-Fraud Detection</h3>
-                    <p class="project-tech">Java, Spring Boot, ML, Redis</p>
-                    <p class="project-desc">ML-powered fraud detection reducing fraud by 95% across 100K+ daily transactions.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Dakwah Content Pipeline</h3>
-                    <p class="project-tech">LLM, FFmpeg, Telegram Bot, YouTube API</p>
-                    <p class="project-desc">Autonomous AI pipeline generating daily dakwah videos with staging, approval, and scheduled publishing.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Crypto DCA Bot</h3>
-                    <p class="project-tech">Python, Binance API, Docker</p>
-                    <p class="project-desc">Multi-pair smart DCA system with auto-rebalance, stop-loss, and Telegram monitoring.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Stock Alert System</h3>
-                    <p class="project-tech">Python, yfinance, Telegram Bot</p>
-                    <p class="project-desc">Real-time stock monitoring with price alerts and automated notifications.</p>
-                    <a class="project-link" href="https://github.com/sipadl/stock-alerts" target="_blank">GitHub →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Fadel Muhammad. Open to freelance & collaboration — let's build something.</p>
-        </div>
-    </footer>
-
+    <!-- External Script -->
+    <script src="main.js"></script>
 </body>
+
 </html>
