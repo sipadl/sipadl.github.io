@@ -1,30 +1,26 @@
 /* ==========================================================================
    Fadel Muhammad — Executive CV / Engineering Resume Stylesheet
-   Designed for senior recruiters & hiring managers:
-   - High visual polish (subtle depth, refined borders, premium typography)
-   - Balanced 2-column executive layout
-   - 100% clean, non-slop aesthetic
+   Designed for senior recruiters & hiring managers.
+   Fully responsive across mobile (320px+), tablet (768px), & desktop (1024px+).
    ========================================================================== */
 
 :root {
     /* Color Palette */
-    --canvas-bg: #f8fafc;        /* Slate 50 */
-    --card-bg: #ffffff;          /* Pure white card surface */
-    --sidebar-bg: #fafafa;       /* Subtle warm neutral for sidebar accents */
+    --canvas-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --border-subtle: #e2e8f0;
+    --border-medium: #cbd5e1;
+    --border-focus: #0f172a;
     
-    --border-subtle: #e2e8f0;    /* Slate 200 */
-    --border-medium: #cbd5e1;    /* Slate 300 */
-    --border-focus: #0f172a;     /* Deep slate */
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
     
-    --text-primary: #0f172a;     /* Slate 900 */
-    --text-secondary: #334155;   /* Slate 700 */
-    --text-muted: #64748b;       /* Slate 500 */
+    --primary: #1e3a8a;
+    --primary-light: #eff6ff;
+    --primary-border: #bfdbfe;
     
-    --primary: #1e3a8a;          /* Deep navy blue */
-    --primary-light: #eff6ff;    /* Soft blue tint */
-    --primary-border: #bfdbfe;   /* Border for primary badges */
-    
-    --accent-emerald: #059669;   /* Emerald 600 for status */
+    --accent-emerald: #059669;
     --accent-emerald-bg: #ecfdf5;
     
     /* Typography */
@@ -32,13 +28,13 @@
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     
-    /* Layout */
+    /* Layout Tokens */
     --max-width: 1040px;
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 14px;
     
-    /* Elevation */
+    /* Shadows */
     --shadow-soft: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
     --shadow-card: 0 4px 16px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -2px rgba(15, 23, 42, 0.03);
 }
@@ -65,9 +61,11 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding: 32px 20px 80px;
+    overflow-x: hidden;
 }
 
 .page-container {
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -104,17 +102,24 @@ body {
     background-color: var(--accent-emerald);
     border-radius: 50%;
     box-shadow: 0 0 0 2px #d1fae5;
+    flex-shrink: 0;
+}
+
+.badge-text {
+    line-height: 1.3;
 }
 
 .recruiter-actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .action-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     font-family: var(--font-heading);
     font-size: 0.825rem;
@@ -128,6 +133,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: var(--shadow-soft);
+    white-space: nowrap;
 }
 
 .action-btn:hover {
@@ -152,6 +158,7 @@ body {
 .action-btn svg {
     width: 15px;
     height: 15px;
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -162,7 +169,7 @@ body {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-card);
-    padding: 48px;
+    padding: 44px 48px;
 }
 
 /* ==========================================================================
@@ -170,8 +177,8 @@ body {
    ========================================================================== */
 .profile-hero {
     border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 32px;
-    margin-bottom: 36px;
+    padding-bottom: 28px;
+    margin-bottom: 32px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -180,12 +187,12 @@ body {
 .hero-left {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
 }
 
 .avatar-badge {
-    width: 58px;
-    height: 58px;
+    width: 56px;
+    height: 56px;
     border-radius: 12px;
     background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
     color: #ffffff;
@@ -199,12 +206,17 @@ body {
     box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25);
 }
 
+.hero-titles {
+    min-width: 0;
+}
+
 .candidate-name {
     font-size: 2.15rem;
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.15;
     color: var(--text-primary);
+    word-break: break-word;
 }
 
 .candidate-headline {
@@ -212,6 +224,7 @@ body {
     font-weight: 600;
     color: var(--primary);
     margin-top: 4px;
+    line-height: 1.4;
 }
 
 .hero-contacts {
@@ -226,13 +239,20 @@ body {
     gap: 8px;
     background: var(--canvas-bg);
     border: 1px solid var(--border-subtle);
-    padding: 6px 14px;
+    padding: 7px 14px;
     border-radius: 9999px;
     font-size: 0.835rem;
     font-weight: 500;
     color: var(--text-secondary);
     text-decoration: none;
     transition: all 0.2s ease;
+    max-width: 100%;
+}
+
+.contact-pill span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .contact-pill:hover {
@@ -245,6 +265,7 @@ body {
     width: 15px;
     height: 15px;
     color: var(--text-muted);
+    flex-shrink: 0;
 }
 
 .contact-pill:hover svg {
@@ -264,10 +285,15 @@ body {
 .primary-column, .sidebar-column {
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    gap: 32px;
+    min-width: 0;
 }
 
-/* Section Headings with Structured Icons */
+.section-card {
+    min-width: 0;
+}
+
+/* Section Headings */
 .section-title-wrap {
     display: flex;
     align-items: center;
@@ -278,12 +304,13 @@ body {
 }
 
 .section-icon {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary);
+    flex-shrink: 0;
 }
 
 .section-icon svg {
@@ -312,52 +339,12 @@ body {
 }
 
 /* ==========================================================================
-   Key Achievements Grid
-   ========================================================================== */
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-}
-
-.achievement-card {
-    background: #f8fafc;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    border-left: 3px solid var(--primary);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.achievement-card:hover {
-    border-color: var(--primary-border);
-    transform: translateY(-2px);
-    background: #ffffff;
-    box-shadow: var(--shadow-soft);
-}
-
-.achievement-metric {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 4px;
-    line-height: 1.3;
-}
-
-.achievement-desc {
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
-/* ==========================================================================
    Experience Timeline
    ========================================================================== */
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 26px;
     position: relative;
     padding-left: 12px;
 }
@@ -393,7 +380,7 @@ body {
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 6px 12px;
     margin-bottom: 2px;
 }
 
@@ -401,6 +388,7 @@ body {
     font-size: 1.025rem;
     font-weight: 700;
     color: var(--text-primary);
+    line-height: 1.35;
 }
 
 .company-name {
@@ -408,7 +396,7 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary);
-    margin-top: 1px;
+    margin-top: 2px;
 }
 
 .date-badge {
@@ -418,7 +406,7 @@ body {
     color: var(--text-muted);
     background: var(--canvas-bg);
     border: 1px solid var(--border-subtle);
-    padding: 2px 8px;
+    padding: 3px 8px;
     border-radius: var(--radius-sm);
     white-space: nowrap;
 }
@@ -428,15 +416,15 @@ body {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 8px;
 }
 
 .bullet-list li {
     position: relative;
-    padding-left: 14px;
+    padding-left: 15px;
     font-size: 0.885rem;
     color: var(--text-secondary);
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 .bullet-list li::before {
@@ -458,21 +446,21 @@ body {
 .skill-groups {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
 }
 
 .skill-category {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
 
 .category-name {
-    font-size: 0.775rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
 }
 
 .tag-cloud {
@@ -488,7 +476,7 @@ body {
     color: var(--text-secondary);
     background: #f8fafc;
     border: 1px solid var(--border-subtle);
-    padding: 3px 8px;
+    padding: 4px 9px;
     border-radius: 5px;
     transition: all 0.15s ease;
 }
@@ -504,7 +492,7 @@ body {
     background: #f8fafc;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
-    padding: 14px;
+    padding: 14px 16px;
 }
 
 .edu-degree {
@@ -516,7 +504,7 @@ body {
 
 .edu-school {
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--primary);
     margin-top: 3px;
 }
@@ -539,6 +527,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     font-size: 0.85rem;
     padding: 6px 0;
     border-bottom: 1px dashed var(--border-subtle);
@@ -557,16 +546,170 @@ body {
     font-size: 0.775rem;
     color: var(--text-muted);
     font-weight: 500;
+    text-align: right;
 }
 
 /* Footer */
 .cv-footer {
-    margin-top: 48px;
-    padding-top: 24px;
+    margin-top: 40px;
+    padding-top: 20px;
     border-top: 1px solid var(--border-subtle);
     text-align: center;
     font-size: 0.775rem;
     color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops (<= 960px) */
+@media (max-width: 960px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .cv-layout {
+        padding: 36px 32px;
+    }
+
+    .sidebar-column {
+        padding-top: 12px;
+        border-top: 1px solid var(--border-subtle);
+    }
+}
+
+/* Mobile Devices (<= 680px) */
+@media (max-width: 680px) {
+    body {
+        padding: 12px 10px 48px;
+    }
+
+    /* Top App Header Mobile Stacking */
+    .app-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .recruiter-badge {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        padding: 7px 12px;
+    }
+
+    .recruiter-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .recruiter-actions .action-btn.primary {
+        grid-column: 1 / -1; /* Download CV full width on mobile */
+        order: -1;
+    }
+
+    .action-btn {
+        width: 100%;
+        padding: 9px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* CV Card Mobile Padding */
+    .cv-layout {
+        padding: 24px 18px;
+        border-radius: var(--radius-md);
+    }
+
+    /* Profile Hero Mobile */
+    .profile-hero {
+        padding-bottom: 22px;
+        margin-bottom: 24px;
+        gap: 16px;
+    }
+
+    .hero-left {
+        gap: 14px;
+    }
+
+    .avatar-badge {
+        width: 48px;
+        height: 48px;
+        font-size: 1.15rem;
+        border-radius: 10px;
+    }
+
+    .candidate-name {
+        font-size: 1.75rem;
+    }
+
+    .candidate-headline {
+        font-size: 0.95rem;
+    }
+
+    /* Contact Links: Full width stacked pills on mobile */
+    .hero-contacts {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .contact-pill {
+        width: 100%;
+        border-radius: 8px;
+        padding: 8px 12px;
+    }
+
+    /* Timeline Mobile: Clean Left Margin */
+    .timeline {
+        padding-left: 8px;
+    }
+
+    .timeline::before {
+        left: 2px;
+    }
+
+    .timeline-dot {
+        left: -10px;
+    }
+
+    .timeline-entry {
+        padding-left: 14px;
+    }
+
+    .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-bottom: 6px;
+    }
+
+    .date-badge {
+        display: inline-block;
+        margin-top: 2px;
+    }
+
+    .bullet-list li {
+        font-size: 0.875rem;
+    }
+}
+
+/* Small Screens (<= 400px) */
+@media (max-width: 400px) {
+    .candidate-name {
+        font-size: 1.5rem;
+    }
+
+    .recruiter-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-layout {
+        padding: 20px 14px;
+    }
 }
 
 /* ==========================================================================
@@ -590,59 +733,11 @@ body {
     }
 
     .content-grid {
-        grid-template-columns: 1.6fr 1fr;
-        gap: 28px;
+        grid-template-columns: 1.6fr 1fr !important;
+        gap: 28px !important;
     }
 
     .cv-footer {
         display: none !important;
-    }
-}
-
-/* ==========================================================================
-   Responsive Adaptations
-   ========================================================================== */
-@media (max-width: 860px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .cv-layout {
-        padding: 32px 24px;
-    }
-
-    .candidate-name {
-        font-size: 1.85rem;
-    }
-
-    .hero-contacts {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 600px) {
-    body {
-        padding: 16px 12px 48px;
-    }
-
-    .app-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero-left {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .cv-layout {
-        padding: 24px 16px;
-    }
-
-    .entry-header {
-        flex-direction: column;
     }
 }
